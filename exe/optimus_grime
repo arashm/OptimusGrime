@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
-require 'optimus_grime'
+require_relative '../lib/optimus_grime'
+
+OptimusGrime.start(ARGV)
