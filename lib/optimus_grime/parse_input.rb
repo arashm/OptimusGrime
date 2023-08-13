@@ -2,9 +2,9 @@
 
 module OptimusGrime
   class ParseInput
-    INPUT_REGEX = Regexp.new('(\d+)x(\d+)(?:\s?\((\d+), (\d+)\))?')
     BOARD_REGEXP = Regexp.new('(\d+)x(\d+)')
     LOCATION_REGEXP = Regexp.new('(?:\s?\((\d+), (\d+)\))')
+    INPUT_REGEX = Regexp.new("#{BOARD_REGEXP}#{LOCATION_REGEXP}+")
 
     def self.parse(args)
       raise InputError.new('Invalid input') unless INPUT_REGEX.match?(args)
